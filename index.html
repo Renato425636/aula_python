@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apostila Completa - Introdução à Programação com Python</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.6;
+      color: #333;
+      background-color: #fdfdfd;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+    }
+    h2 {
+      font-size: 2em;
+      margin-top: 40px;
+    }
+    h3 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #bdc3c7;
+    }
+    code {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #ecf0f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    pre {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    pre code {
+      background-color: transparent;
+      padding: 0;
+    }
+    .analogy, .important {
+      padding: 15px;
+      margin: 20px 0;
+      border-left: 5px solid #3498db;
+      background-color: #eaf5fc;
+      border-radius: 0 8px 8px 0;
+    }
+    .important {
+      border-left-color: #e74c3c;
+      background-color: #fceae8;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+    }
+    th, td {
+      border: 1px solid #bdc3c7;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #ecf0f1;
+      font-weight: bold;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    .solution {
+      display: none;
+      margin-top: 15px;
+      border: 1px dashed #7f8c8d;
+      padding: 10px;
+    }
+    .toggle-solution {
+      cursor: pointer;
+      color: #3498db;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .exercise-section {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Apostila Completa: Introdução à Programação com Python</h1>
+  <p><em>Um guia passo a passo para iniciantes absolutos.</em></p>
+
+    <h2>Capítulo 1: O Ponto de Partida - Lógica e Primeiro Contato com Python</h2>
+    <h3>1.1. O que é Programação? Uma conversa com seu computador.</h3>
+  <p>Bem-vindo ao fascinante mundo da programação! Se você está lendo isto, provavelmente tem curiosidade sobre como os aplicativos do seu celular, os sites que você visita e os jogos que você joga são criados. A resposta curta é: com programação.</p>
+  <p>Mas o que é programar? Em sua essência, <strong>programar é dar instruções a um computador para que ele realize uma tarefa</strong>. É uma forma de comunicação, uma conversa entre você e a máquina.</p>
+  <p>No entanto, há um detalhe importante: o computador, apesar de ser extremamente rápido e poderoso, não tem inteligência própria nem bom senso. Ele é um executor de ordens. Isso nos leva a uma analogia fundamental.</p>
+  <div class="analogy">
+    <p><strong>Analogia: O Robô Literal</strong></p>
+    <p>Imagine que você tem um robô em sua cozinha, pronto para fazer um sanduíche para você. Você não pode simplesmente dizer "Faça um sanduíche". O robô não saberia que tipo de pão usar, o que colocar dentro, se deve cortar ou não. Ele precisa de instruções exatas, passo a passo.</p>
+    <p>Uma sequência de instruções seria algo como:</p>
+    <ol>
+      <li>Pegue duas fatias de pão de forma do pacote.</li>
+      <li>Coloque as duas fatias em um prato.</li>
+      <li>Abra o pote de maionese.</li>
+      <li>Pegue uma faca.</li>
+      <li>Use a faca para passar maionese em uma das fatias.</li>
+      <li>Pegue duas fatias de queijo.</li>
+      <li>Coloque as fatias de queijo sobre a maionese.</li>
+      <li>Coloque a outra fatia de pão por cima.</li>
+    </ol>
+    <p>O computador é como este robô: <strong>obediente, mas extremamente literal</strong>. Ele fará exatamente o que você mandar, na ordem em que você mandar. Se você esquecer um passo (como abrir o pote de maionese), ele não conseguirá continuar. Se sua instrução for ambígua, ele pode produzir um resultado inesperado. </p>
+  </div>
+  <h4>Lógica de Programação: A arte de quebrar problemas em passos pequenos</h4>
+  <p>A habilidade de pegar um problema grande ("fazer um sanduíche") e quebrá-lo nesses passos pequenos, lógicos e sequenciais é o que chamamos de <strong>lógica de programação</strong>. É a habilidade mais importante que um programador desenvolve, e ela independe da linguagem de programação que você usa. É a arte de pensar como um computador precisa que você pense.</p>
+
+  <h3>1.2. Por que Python? A linguagem ideal para começar.</h3>
+  <p>Existem centenas de linguagens de programação, cada uma com suas forças e fraquezas. Então, por que escolhemos o Python para iniciar nossa jornada? Por vários motivos excelentes:</p>
+  <ul>
+    <li><strong>Sintaxe Legível e Simples:</strong> O código em Python é famoso por ser parecido com a língua inglesa. Ele usa palavras comuns como <code>if</code>, <code>for</code>, <code>in</code>, o que torna a leitura e a escrita do código muito mais intuitiva para iniciantes. Menos símbolos e regras confusas significam que você pode se concentrar mais na lógica do que na gramática da linguagem.</li>
+    <li><strong>Comunidade Gigante e Acolhedora:</strong> Se você tiver uma dúvida, é quase garantido que alguém já a teve antes e a resposta está a uma busca no Google de distância. A comunidade Python é vasta e produz inúmeros tutoriais, bibliotecas e ferramentas que facilitam a vida do programador.</li>
+    <li><strong>Extrema Versatilidade:</strong> Python não é um "brinquedo" para iniciantes. É uma linguagem poderosa usada por gigantes como Google, Netflix, Instagram e NASA. Com Python, você pode fazer de tudo: criar sites, analisar dados, desenvolver inteligência artificial, automatizar tarefas, criar jogos e muito mais. Aprender Python abre um universo de possibilidades.</li>
+  </ul>
+
+  <h3>1.3. Preparando o Terreno: Instalação</h3>
+  <p>Antes de escrevermos nosso primeiro código, precisamos instalar o Python em seu computador. O processo é simples. Visite o site oficial: <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads/</a>.</p>
+ 
+  <h4>Guia de Instalação</h4>
+  <ul>
+    <li><strong>Windows:</strong>
+      <ol>
+        <li>No site, baixe o instalador mais recente para Windows.</li>
+        <li>Execute o arquivo baixado.</li>
+        <li><strong>MUITO IMPORTANTE:</strong> Na primeira tela do instalador, marque a caixa que diz <strong>"Add Python to PATH"</strong>. Isso facilitará muito sua vida.</li>
+        <li>Clique em "Install Now" e siga as instruções.</li>
+      </ol>
+    </li>
+    <li><strong>macOS:</strong>
+      <ol>
+        <li>macOS já vem com uma versão de Python, mas geralmente é uma versão mais antiga. É recomendado instalar a mais recente.</li>
+        <li>Baixe o instalador para macOS do site oficial.</li>
+        <li>Execute o arquivo <code>.pkg</code> e siga as instruções, como em qualquer outro programa para Mac.</li>
+      </ol>
+    </li>
+    <li><strong>Linux:</strong>
+      <ol>
+        <li>A maioria das distribuições Linux já vem com Python instalado. Abra o terminal e digite <code>python3 --version</code>.</li>
+        <li>Se precisar de uma versão mais nova, você pode usar o gerenciador de pacotes da sua distribuição. Por exemplo, em sistemas baseados em Debian/Ubuntu: <code>sudo apt update && sudo apt install python3</code>.</li>
+      </ol>
+    </li>
+  </ul>
+
+  <h4>IDLE e o Terminal</h4>
+  <p>Junto com o Python, vem uma ferramenta chamada <strong>IDLE</strong>. Ele é um ambiente de desenvolvimento simples que inclui um editor de texto e um console interativo, perfeito para começar. Você pode encontrá-lo pesquisando por "IDLE" em seu computador.</p>
+  <p>Outra forma de interagir com o Python é através do <strong>terminal</strong> (no macOS/Linux) ou do <strong>Prompt de Comando/PowerShell</strong> (no Windows). Apenas abra um deles e digite <code>python</code> ou <code>python3</code>. Você verá um prompt <code>>>></code>, indicando que o Python está pronto para receber seus comandos!</p>
+
+  <h3>1.4. Seu Primeiro Programa: O "Olá, Mundo!"</h3>
+  <p>É uma tradição na programação: o primeiro programa que todo mundo escreve simplesmente exibe a mensagem "Olá, Mundo!" na tela. Vamos fazer o nosso.</p>
+  <p>Abra o IDLE ou o terminal/prompt de comando. No prompt <code>>>></code>, digite o seguinte e pressione Enter:</p>
+  <pre><code>print("Olá, Mundo!")</code></pre>
+  <p>O resultado que aparecerá na tela será:</p>
+  <pre><code>Olá, Mundo!</code></pre>
+  <p>Parabéns! Você acabou de escrever e executar seu primeiro programa em Python! Você deu uma instrução ao computador, e ele a obedeceu perfeitamente.</p>
+ 
+  <h4>Analisando o código</h4>
+  <p>Vamos quebrar essa pequena linha de código:</p>
+  <ul>
+    <li><code>print</code>: Este é o nome de uma <strong>função</strong>. Uma função é um conjunto de instruções que já vêm prontas no Python para realizar uma tarefa específica. A função <code>print</code> tem a tarefa de exibir na tela o que quer que você coloque dentro dos parênteses.</li>
+    <li><code>()</code>: Os parênteses são usados para passar informações para a função. Chamamos essas informações de <strong>argumentos</strong>.</li>
+    <li><code>"Olá, Mundo!"</code>: Este é o argumento que passamos para a função <code>print</code>. Como é um texto, nós o colocamos entre aspas. Falaremos mais sobre isso no próximo capítulo.</li>
+  </ul>
+
+  <h3>1.5. Comentários: Deixando notas em seu código.</h3>
+  <p>À medida que seus programas ficam mais complexos, você vai querer deixar notas para si mesmo (ou para outros programadores) explicando o que certas partes do código fazem. Essas notas são chamadas de <strong>comentários</strong>.</p>
+  <p>Em Python, qualquer texto que venha depois do símbolo <code>#</code> (cerquilha ou jogo da velha) em uma linha é ignorado pelo computador. Ele serve apenas para leitura humana.</p>
+  <pre><code># Este é um comentário. O Python vai ignorar completamente esta linha.
+
+print("Olá, Mundo!") # Este comentário explica o que a linha de código faz.
+</code></pre>
+  <div class="important">
+    <p><strong>A importância dos comentários</strong></p>
+    <p>Comentar seu código é um hábito fundamental dos bons programadores. Ajuda a lembrar sua linha de raciocínio quando você volta a um código antigo e permite que outras pessoas entendam seu trabalho mais facilmente. Use-os para explicar o "porquê" do seu código, não apenas o "o quê".</p>
+  </div>
+
+  <div class="exercise-section">
+    <h3>Mão na Massa: Exercícios do Capítulo 1</h3>
+    <ol>
+      <li><strong>Mensagem de Boas-Vindas:</strong> Escreva um programa que use a função <code>print()</code> para exibir a mensagem "Bem-vindo ao mundo da programação!".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 1
+print("Bem-vindo ao mundo da programação!")</code></pre>
+      </div>
+
+      <li><strong>Seu Nome:</strong> Escreva um programa que exiba seu nome completo na tela.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 2
+# Lembre-se de substituir "Seu Nome Completo" pelo seu nome real.
+print("Seu Nome Completo")</code></pre>
+      </div>
+
+      <li><strong>Múltiplas Linhas:</strong> Escreva um programa que exiba seu nome em uma linha e sua cidade em outra linha, usando duas chamadas da função <code>print()</code>.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 3
+print("Seu Nome Completo")
+print("Sua Cidade")</code></pre>
+      </div>
+
+      <li><strong>Código Comentado:</strong> Copie o programa "Olá, Mundo!" e adicione um comentário acima dele explicando que este é seu primeiro programa.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 4
+# Este é o meu primeiro programa em Python!
+print("Olá, Mundo!")</code></pre>
+      </div>
+
+      <li><strong>Comentário Inútil:</strong> Escreva um programa que imprima "Python é divertido!". Adicione um comentário que diz "Este código imprime uma mensagem".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 5
+# Este código imprime uma mensagem
+print("Python é divertido!")</code></pre>
+      </div>
+     
+      <li><strong>Imprimindo Números:</strong> Use a função `print()` para exibir o número 42 na tela. (Dica: números não precisam de aspas).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 6
+print(42)</code></pre>
+      </div>
+     
+      <li><strong>Poema Simples:</strong> Use três chamadas de `print()` para exibir as três primeiras linhas do seu poema ou música favorita.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 7 (Exemplo com "Asa Branca")
+print("Quando olhei a terra ardendo")
+print("Qual fogueira de São João")
+print("Eu perguntei a Deus do céu, ai")</code></pre>
+      </div>
+     
+      <li><strong>Desenho Simples:</strong> Use `print()` para "desenhar" uma carinha feliz simples, como `:)`, na tela.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 8
+print(" :) ")</code></pre>
+      </div>
+
+      <li><strong>Desabilitando Código:</strong> Escreva duas linhas de `print()`. Use um comentário para "desabilitar" a primeira linha e veja o que acontece.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 9
+# print("Esta linha não vai aparecer.")
+print("Esta linha vai aparecer!")
+# Apenas a segunda mensagem é exibida, pois a primeira foi transformada em um comentário.</code></pre>
+      </div>
+
+      <li><strong>Informações Pessoais:</strong> Crie um programa que imprima seu nome, idade e hobby favorito, cada um em uma nova linha. Adicione comentários explicando cada linha.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 10
+# Imprime meu nome
+print("Meu Nome")
+# Imprime minha idade (exemplo)
+print(30)
+# Imprime meu hobby favorito
+print("Aprender a programar")</code></pre>
+      </div>
+
+      <li><strong>Citação Favorita:</strong> Encontre uma citação que você goste e use `print()` para exibi-la na tela, incluindo o autor.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 11
+print("'A imaginação é mais importante que o conhecimento.' - Albert Einstein")</code></pre>
+      </div>
+
+      <li><strong>Lista de Compras:</strong> Use múltiplas chamadas de `print()` para listar 5 itens que você precisa comprar no supermercado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 12
+print("Lista de Compras:")
+print("- Leite")
+print("- Pão")
+print("- Ovos")
+print("- Café")
+print("- Manteiga")</code></pre>
+      </div>
+
+      <li><strong>Instruções de Robô:</strong> Usando comentários, escreva os 3 primeiros passos que você daria a um "robô literal" para a tarefa de escovar os dentes. Depois, adicione uma linha de `print()` no final que diga "Instruções enviadas!".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 13
+# Passo 1: Pegue a escova de dentes.
+# Passo 2: Pegue o tubo de pasta de dente.
+# Passo 3: Abra a tampa do tubo de pasta de dente.
+
+print("Instruções enviadas!")</code></pre>
+      </div>
+    </ol>
+  </div>
+
+    <h2>Capítulo 2: Armazenando Informações - Variáveis e Tipos de Dados</h2>
+    <h3>2.1. Variáveis: As "Caixas" Etiquetadas da Programação.</h3>
+  <p>No capítulo anterior, usamos a função <code>print()</code> para exibir informações diretamente. Mas, na maioria das vezes, queremos guardar essas informações para usar depois. Para isso, usamos <strong>variáveis</strong>.</p>
+  <div class="analogy">
+    <p><strong>Analogia: As Caixas de Mudança</strong></p>
+    <p>Imagine que você está se mudando. Você tem vários objetos para guardar: livros, pratos, roupas... Você não joga tudo de qualquer jeito em um caminhão. Você pega caixas, coloca os objetos dentro e, o mais importante, <strong>escreve uma etiqueta</strong> do lado de fora: "Livros da Sala", "Pratos da Cozinha".</p>
+    <p>Em programação, uma variável é exatamente como uma dessas caixas etiquetadas. É um espaço na memória do computador onde guardamos um dado, e damos um nome (uma etiqueta) a esse espaço para que possamos encontrá-lo e usá-lo facilmente mais tarde.</p>
+  </div>
+
+  <h4>Sintaxe de Atribuição</h4>
+  <p>Para criar uma variável em Python (ou seja, para etiquetar uma caixa e guardar algo nela), usamos o sinal de igual <code>=</code>. Isso é chamado de <strong>operador de atribuição</strong>.</p>
+  <p><code>nome_da_variavel = valor</code></p>
+  <p>Vamos ver um exemplo:</p>
+  <pre><code># Criando uma variável chamada 'saudacao' e guardando o texto "Olá, pessoal!" nela.
+saudacao = "Olá, pessoal!"
+
+# Agora podemos usar a variável com a função print()
+print(saudacao)
+
+# Podemos mudar o valor dentro da caixa
+saudacao = "Tudo bem com vocês?"
+print(saudacao)</code></pre>
+  <p>O resultado na tela será:</p>
+  <pre><code>Olá, pessoal!
+Tudo bem com vocês?</code></pre>
+  <p>Note que quando usamos a variável <code>saudacao</code> no <code>print()</code>, não usamos aspas. Se usássemos <code>print("saudacao")</code>, ele imprimiria a palavra "saudacao", e não o valor guardado dentro da variável.</p>
+ 
+  <h4>Regras de Nomenclatura</h4>
+  <p>Você pode escolher quase qualquer nome para suas variáveis, mas existem algumas regras e boas práticas:</p>
+  <ul>
+    <li>Nomes de variáveis só podem conter letras, números e o caractere underscore <code>_</code>.</li>
+    <li>Eles não podem começar com um número.</li>
+    <li>Nomes são "case-sensitive", o que significa que <code>idade</code>, <code>Idade</code> e <code>IDADE</code> são três variáveis diferentes.</li>
+    <li><strong>Padrão <code>snake_case</code>:</strong> A convenção em Python é usar letras minúsculas e separar palavras com underscores. Exemplos: <code>nome_completo</code>, <code>preco_do_produto</code>, <code>idade_do_usuario</code>. Tente seguir este padrão!</li>
+  </ul>
+
+  <h3>2.2. Tipos de Dados Primitivos</h3>
+  <p>O computador precisa saber que "tipo" de informação está guardado em uma variável, pois ele lida com textos, números inteiros e números com casas decimais de maneiras diferentes. Python é inteligente e geralmente descobre o tipo sozinho quando você atribui um valor. Os tipos mais básicos (primitivos) são:</p>
+  <ul>
+    <li>
+      <h4>Strings (<code>str</code>): Para textos.</h4>
+      <p>Uma string (cadeia de caracteres) é qualquer sequência de texto. Em Python, declaramos strings usando aspas simples <code>' '</code> ou aspas duplas <code>" "</code>. Ambas funcionam da mesma forma.</p>
+      <pre><code>nome = "Maria"
+cidade = 'São Paulo'
+frase = "Ela disse: 'Olá!'" # Use aspas duplas se o texto contiver aspas simples, e vice-versa.
+</code></pre>
+    </li>
+    <li>
+      <h4>Inteiros (<code>int</code>): Para números inteiros.</h4>
+      <p>São números sem casas decimais, positivos ou negativos.</p>
+      <pre><code>idade = 30
+ano = 2023
+temperatura_negativa = -5</code></pre>
+    </li>
+    <li>
+      <h4>Ponto Flutuante (<code>float</code>): Para números com decimais.</h4>
+      <p>São números que possuem uma parte fracionária. Note que em programação, usamos o ponto <code>.</code> como separador decimal, e não a vírgula.</p>
+      <pre><code>altura = 1.75
+preco = 49.99
+pi = 3.14159</code></pre>
+    </li>
+    <li>
+      <h4>Booleanos (<code>bool</code>): Para <code>True</code> ou <code>False</code>.</h4>
+      <p>O tipo booleano só pode ter dois valores: <code>True</code> (Verdadeiro) ou <code>False</code> (Falso). Eles são a base da lógica e da tomada de decisões em programação. Note que a primeira letra é sempre maiúscula.</p>
+      <pre><code>usuario_logado = True
+compra_aprovada = False
+tem_cafe = True</code></pre>
+    </li>
+  </ul>
+
+  <h3>2.3. A Função <code>type()</code>: Descobrindo o tipo de um dado.</h3>
+  <p>Se você tiver dúvida sobre qual é o tipo de dado de uma variável, pode usar a função <code>type()</code>. Ela retorna o tipo da variável que você passar como argumento.</p>
+  <pre><code>nome = "Alice"
+idade = 25
+altura = 1.68
+estudando = True
+
+print(type(nome))
+print(type(idade))
+print(type(altura))
+print(type(estudando))</code></pre>
+  <p>O resultado será:</p>
+  <pre><code>&lt;class 'str'&gt;
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'bool'&gt;</code></pre>
+  <p><code>str</code>, <code>int</code>, <code>float</code> e <code>bool</code> são as abreviações para string, integer, float e boolean, respectivamente.</p>
+
+  <h3>2.4. Conversão de Tipos (Type Casting)</h3>
+  <p>Às vezes, precisamos converter um dado de um tipo para outro. Esse processo é chamado de <strong>type casting</strong>. Python nos oferece funções simples para isso:</p>
+  <ul>
+    <li><code>str(valor)</code>: Converte o valor para uma string.</li>
+    <li><code>int(valor)</code>: Converte o valor para um inteiro.</li>
+    <li><code>float(valor)</code>: Converte o valor para um float.</li>
+  </ul>
+  <p>Isso é extremamente útil, como veremos a seguir.</p>
+  <pre><code>numero_em_string = "100"
+print(type(numero_em_string))
+
+# Convertendo a string para um inteiro
+numero_em_int = int(numero_em_string)
+print(type(numero_em_int))
+
+# Agora podemos fazer contas com ele
+print(numero_em_int * 2) # O resultado será 200
+
+# Convertendo um inteiro para float
+numero_em_float = float(numero_em_int)
+print(numero_em_float) # O resultado será 100.0
+
+# Convertendo um número para string
+idade = 30
+mensagem = "Eu tenho " + str(idade) + " anos." # Não podemos somar string com int diretamente
+print(mensagem)</code></pre>
+  <div class="important">
+    <p><strong>Cuidado com as conversões!</strong></p>
+    <p>Você só pode converter para <code>int</code> ou <code>float</code> uma string que realmente represente um número. Tentar fazer <code>int("olá")</code> resultará em um erro!</p>
+  </div>
+
+  <h3>2.5. A Função <code>input()</code>: Conversando com o usuário.</h3>
+  <p>Até agora, nós definimos os valores das variáveis diretamente no código. Mas e se quisermos que o usuário do programa nos forneça uma informação? Para isso, usamos a função <code>input()</code>.</p>
+  <p>A função <code>input()</code> exibe uma mensagem na tela (o texto que você coloca dentro dos parênteses) e fica esperando o usuário digitar algo e pressionar Enter. O que o usuário digita é então retornado pela função.</p>
+ 
+  <div class="important">
+    <p><strong>A Regra de Ouro do <code>input()</code></strong></p>
+    <p>A função <code>input()</code> <strong>SEMPRE</strong> retorna o que o usuário digitou como uma <strong>STRING</strong>, mesmo que ele tenha digitado apenas números.</p>
+  </div>
+
+  <p>Veja este exemplo:</p>
+  <pre><code># Pergunta o nome do usuário e guarda na variável 'nome'
+nome_usuario = input("Por favor, digite seu nome: ")
+
+# Pergunta a idade do usuário e guarda na variável 'idade_str'
+idade_str = input("Agora, digite sua idade: ")
+
+print("Olá, " + nome_usuario + "!")
+print("O tipo da variável idade_str é:", type(idade_str)) # Vai mostrar <class 'str'>
+
+# Para usar a idade como um número, precisamos convertê-la!
+idade_int = int(idade_str)
+ano_nascimento = 2023 - idade_int
+
+print("Você nasceu por volta de", ano_nascimento)</code></pre>
+
+  <div class="exercise-section">
+    <h3>Mão na Massa: Exercícios do Capítulo 2</h3>
+    <ol>
+      <li><strong>Informações Pessoais em Variáveis:</strong> Crie variáveis para armazenar seu nome, idade e altura. Depois, imprima cada uma delas.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 1
+nome = "Seu Nome"
+idade = 30 # Substitua pela sua idade
+altura = 1.75 # Substitua pela sua altura
+
+print(nome)
+print(idade)
+print(altura)</code></pre>
+      </div>
+
+      <li><strong>Verificador de Tipos:</strong> Crie uma variável para cada tipo de dado primitivo (str, int, float, bool) e use a função <code>type()</code> para imprimir o tipo de cada uma.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 2
+texto = "Python"
+numero_inteiro = 10
+numero_decimal = 9.99
+verdadeiro_falso = False
+
+print(type(texto))
+print(type(numero_inteiro))
+print(type(numero_decimal))
+print(type(verdadeiro_falso))</code></pre>
+      </div>
+
+      <li><strong>Coletor de Dados:</strong> Escreva um programa que use a função <code>input()</code> para perguntar ao usuário seu nome e sua cidade. Depois, imprima uma mensagem como "Olá [Nome], que legal que você é de [Cidade]!".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 3
+nome_usuario = input("Qual é o seu nome? ")
+cidade_usuario = input("De qual cidade você é? ")
+
+print("Olá " + nome_usuario + ", que legal que você é de " + cidade_usuario + "!")</code></pre>
+      </div>
+
+      <li><strong>Calculadora de Idade Futura:</strong> Pergunte ao usuário sua idade atual. Converta a resposta para inteiro e calcule qual será a idade dele daqui a 10 anos. Imprima o resultado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 4
+idade_atual_str = input("Qual é a sua idade atual? ")
+idade_atual_int = int(idade_atual_str)
+
+idade_futura = idade_atual_int + 10
+
+print("Daqui a 10 anos, você terá " + str(idade_futura) + " anos.")</code></pre>
+      </div>
+
+      <li><strong>Conversor de Medidas:</strong> Peça ao usuário para inserir uma altura em metros (ex: 1.80). Converta para <code>float</code> e depois calcule e imprima a altura em centímetros (metros * 100).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 5
+altura_metros_str = input("Digite sua altura em metros (ex: 1.75): ")
+altura_metros_float = float(altura_metros_str)
+
+altura_cm = altura_metros_float * 100
+
+print("Sua altura em centímetros é: " + str(altura_cm) + " cm.")</code></pre>
+      </div>
+
+      <li><strong>Concatenação de Strings:</strong> Crie duas variáveis, `primeiro_nome` e `sobrenome`. Armazene seu nome nelas. Crie uma terceira variável, `nome_completo`, que seja a junção das duas primeiras (não esqueça o espaço entre elas!). Imprima `nome_completo`.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 6
+primeiro_nome = "José"
+sobrenome = "da Silva"
+
+nome_completo = primeiro_nome + " " + sobrenome
+
+print(nome_completo)</code></pre>
+      </div>
+
+      <li><strong>Preço de Produto:</strong> Crie uma variável `preco` do tipo `float` com o valor 29.90. Crie uma variável `desconto` com o valor 0.10 (10%). Calcule o valor do desconto e armazene em uma variável `valor_desconto`. Imprima o valor do desconto.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 7
+preco = 29.90
+desconto = 0.10 # 10%
+
+valor_desconto = preco * desconto
+
+print("O valor do desconto é: R$" + str(valor_desconto))</code></pre>
+      </div>
+
+      <li><strong>Status de Jogo:</strong> Crie uma variável booleana chamada `jogo_terminado` e atribua a ela o valor `False`. Imprima o valor da variável.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 8
+jogo_terminado = False
+print(jogo_terminado)</code></pre>
+      </div>
+
+      <li><strong>Input e Conversão Direta:</strong> Reescreva o exercício 4 (Calculadora de Idade Futura) para fazer a conversão de tipo na mesma linha em que você usa o `input()`. Dica: <code>idade = int(input("..."))</code>.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 9
+idade_atual = int(input("Qual é a sua idade atual? "))
+
+idade_futura = idade_atual + 10
+
+print("Daqui a 10 anos, você terá " + str(idade_futura) + " anos.")</code></pre>
+      </div>
+
+      <li><strong>Cadastro Simples:</strong> Peça ao usuário para digitar seu e-mail e sua senha (ambos serão strings). Depois, imprima uma mensagem "Cadastro realizado com o e-mail: [e-mail do usuário]". (Não se preocupe com segurança por enquanto).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 10
+email = input("Digite seu e-mail para cadastro: ")
+senha = input("Digite sua senha: ") # Apenas para o exercício
+
+print("Cadastro realizado com o e-mail: " + email)</code></pre>
+      </div>
+     
+      <li><strong>Troca de Valores:</strong> Crie duas variáveis, `a` com valor 5 e `b` com valor 10. Agora, troque os valores entre elas para que `a` se torne 10 e `b` se torne 5. Imprima os valores de `a` e `b` depois da troca. (Dica: você pode precisar de uma terceira variável temporária).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 11
+a = 5
+b = 10
+print("Valores originais: a =", a, ", b =", b)
+
+# Usando uma variável temporária
+temp = a
+a = b
+b = temp
+
+print("Valores trocados: a =", a, ", b =", b)
+
+# Existe uma forma mais "Pythônica" de fazer isso, que você aprenderá depois:
+# a, b = b, a</code></pre>
+      </div>
+
+      <li><strong>Número Favorito:</strong> Peça ao usuário para digitar seu número favorito. Armazene em uma variável e depois imprima "Seu número favorito é [número]! O meu é 7.".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 12
+numero_favorito = input("Qual é o seu número favorito? ")
+print("Seu número favorito é " + numero_favorito + "! O meu é 7.")</code></pre>
+      </div>
+
+      <li><strong>Conversão de Inteiro para String:</strong> Crie uma variável `codigo_produto` com o valor inteiro 1023. Converta este número para uma string e junte-o com o texto "PROD-" para formar o código "PROD-1023". Imprima o resultado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 13
+codigo_produto_int = 1023
+codigo_produto_str = "PROD-" + str(codigo_produto_int)
+
+print(codigo_produto_str)</code></pre>
+      </div>
+    </ol>
+  </div>
+ 
+    <h2>Capítulo 3: Manipulando Dados - Operadores</h2>
+    <p>Agora que sabemos como armazenar dados em variáveis, o próximo passo é aprender a manipulá-los. Para isso, usamos <strong>operadores</strong>. Eles são símbolos especiais que executam operações em nossos dados, como somar números, comparar valores ou combinar condições.</p>
+ 
+  <h3>3.1. Operadores Aritméticos: A matemática do Python.</h3>
+  <p>Estes são os operadores que você provavelmente já conhece da matemática. Eles nos permitem realizar cálculos com tipos numéricos (<code>int</code> e <code>float</code>).</p>
+ 
+  <table>
+    <thead>
+      <tr>
+        <th>Operador</th>
+        <th>Nome</th>
+        <th>Exemplo</th>
+        <th>Resultado</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>+</code></td>
+        <td>Adição</td>
+        <td><code>10 + 5</code></td>
+        <td><code>15</code></td>
+        <td>Soma dois números.</td>
+      </tr>
+      <tr>
+        <td><code>-</code></td>
+        <td>Subtração</td>
+        <td><code>10 - 5</code></td>
+        <td><code>5</code></td>
+        <td>Subtrai o segundo número do primeiro.</td>
+      </tr>
+      <tr>
+        <td><code>*</code></td>
+        <td>Multiplicação</td>
+        <td><code>10 * 5</code></td>
+        <td><code>50</code></td>
+        <td>Multiplica dois números.</td>
+      </tr>
+      <tr>
+        <td><code>/</code></td>
+        <td>Divisão (Real)</td>
+        <td><code>10 / 4</code></td>
+        <td><code>2.5</code></td>
+        <td>Divide e <strong>sempre</strong> retorna um resultado <code>float</code>.</td>
+      </tr>
+      <tr>
+        <td><code>//</code></td>
+        <td>Divisão Inteira</td>
+        <td><code>10 // 4</code></td>
+        <td><code>2</code></td>
+        <td>Divide e retorna apenas a parte inteira do resultado, descartando os decimais.</td>
+      </tr>
+      <tr>
+        <td><code>%</code></td>
+        <td>Módulo (Resto)</td>
+        <td><code>10 % 3</code></td>
+        <td><code>1</code></td>
+        <td>Retorna o resto da divisão. (10 dividido por 3 é 3, com resto 1). Muito útil para saber se um número é par ou ímpar (<code>numero % 2</code>).</td>
+      </tr>
+      <tr>
+        <td><code>**</code></td>
+        <td>Exponenciação</td>
+        <td><code>2 ** 3</code></td>
+        <td><code>8</code></td>
+        <td>Eleva o primeiro número à potência do segundo (2 elevado a 3).</td>
+      </tr>
+    </tbody>
+  </table>
+ 
+  <p>Exemplo prático de uso:</p>
+  <pre><code># Calculando a área de um retângulo
+largura = 10
+altura = 5
+area = largura * altura
+print("A área do retângulo é:", area)
+
+# Calculando quantos ovos sobram
+total_ovos = 25
+caixas_de_6 = total_ovos // 6
+ovos_sobrando = total_ovos % 6
+print("Podemos encher", caixas_de_6, "caixas e sobrarão", ovos_sobrando, "ovos.")</code></pre>
+ 
+  <h3>3.2. Operadores de Comparação: Fazendo perguntas ao código.</h3>
+  <p>Muitas vezes, precisamos comparar valores. Por exemplo, "a idade do usuário é maior que 18?" ou "a senha digitada é igual à senha correta?". Os operadores de comparação nos ajudam a fazer essas perguntas.</p>
+  <div class="important">
+    <p><strong>Resultado Booleano</strong></p>
+    <p>O resultado de qualquer operação de comparação é <strong>sempre</strong> um valor booleano: <code>True</code> ou <code>False</code>.</p>
+  </div>
+ 
+  <table>
+    <thead>
+      <tr>
+        <th>Operador</th>
+        <th>Significado</th>
+        <th>Exemplo</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>==</code></td>
+        <td>Igual a</td>
+        <td><code>5 == 5</code></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>!=</code></td>
+        <td>Diferente de</td>
+        <td><code>5 != 10</code></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>></code></td>
+        <td>Maior que</td>
+        <td><code>10 > 5</code></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code><</code></td>
+        <td>Menor que</td>
+        <td><code>10 < 5</code></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>>=</code></td>
+        <td>Maior ou igual a</td>
+        <td><code>5 >= 5</code></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code><=</code></td>
+        <td>Menor ou igual a</td>
+        <td><code>10 <= 5</code></td>
+        <td><code>False</code></td>
+      </tr>
+    </tbody>
+  </table>
+ 
+  <p>Exemplo prático de uso:</p>
+  <pre><code>idade_usuario = 20
+idade_minima_para_dirigir = 18
+
+pode_dirigir = idade_usuario >= idade_minima_para_dirigir
+print("O usuário pode dirigir?", pode_dirigir)
+
+numero_secreto = 42
+chute = int(input("Adivinhe o número: "))
+
+acertou = chute == numero_secreto
+print("Você acertou?", acertou)</code></pre>
+ 
+  <h3>3.3. Operadores Lógicos: Combinando Condições.</h3>
+  <p>E se precisarmos verificar mais de uma condição ao mesmo tempo? Por exemplo, "o usuário é maior de idade E tem carteira de motorista?". Para isso, usamos os operadores lógicos: <code>and</code>, <code>or</code> e <code>not</code>.</p>
+
+  <h4><code>and</code> (E)</h4>
+  <p>O operador <code>and</code> retorna <code>True</code> somente se <strong>AMBAS</strong> as condições que ele conecta forem verdadeiras. Se uma delas (ou ambas) for falsa, o resultado é <code>False</code>.</p>
+  <div class="analogy">
+    <p><strong>Analogia: Viagem Internacional</strong></p>
+    <p>Para embarcar em um voo internacional, você precisa ter a <strong>passagem E</strong> o <strong>passaporte</strong>. Não adianta ter só um deles. Os dois são obrigatórios.</p>
+  </div>
+ 
+  <h4><code>or</code> (OU)</h4>
+  <p>O operador <code>or</code> retorna <code>True</code> se <strong>PELO MENOS UMA</strong> das condições que ele conecta for verdadeira. Ele só retorna <code>False</code> se ambas as condições forem falsas.</p>
+  <div class="analogy">
+    <p><strong>Analogia: Forma de Pagamento</strong></p>
+    <p>Em uma loja, você pode pagar com <strong>cartão OU</strong> com <strong>dinheiro</strong>. Você não precisa dos dois, apenas um deles é suficiente para completar a compra.</p>
+  </div>
+
+  <h4><code>not</code> (NÃO)</h4>
+  <p>O operador <code>not</code> é mais simples: ele inverte o valor booleano de uma condição. O que era <code>True</code> vira <code>False</code>, e o que era <code>False</code> vira <code>True</code>.</p>
+  <div class="analogy">
+    <p><strong>Analogia: Porta Aberta/Fechada</strong></p>
+    <p>Se a condição <code>porta_fechada</code> é <code>True</code>, então <code>not porta_fechada</code> é <code>False</code> (significa que a porta está aberta).</p>
+  </div>
+ 
+  <h4>Tabelas da Verdade Simplificadas</h4>
+  <table>
+    <caption>Operador <code>and</code></caption>
+    <thead><tr><th>Condição 1</th><th>Condição 2</th><th>Resultado</th></tr></thead>
+    <tbody>
+      <tr><td><code>True</code></td><td><code>True</code></td><td><code>True</code></td></tr>
+      <tr><td><code>True</code></td><td><code>False</code></td><td><code>False</code></td></tr>
+      <tr><td><code>False</code></td><td><code>True</code></td><td><code>False</code></td></tr>
+      <tr><td><code>False</code></td><td><code>False</code></td><td><code>False</code></td></tr>
+    </tbody>
+  </table>
+  <table>
+    <caption>Operador <code>or</code></caption>
+    <thead><tr><th>Condição 1</th><th>Condição 2</th><th>Resultado</th></tr></thead>
+    <tbody>
+      <tr><td><code>True</code></td><td><code>True</code></td><td><code>True</code></td></tr>
+      <tr><td><code>True</code></td><td><code>False</code></td><td><code>True</code></td></tr>
+      <tr><td><code>False</code></td><td><code>True</code></td><td><code>True</code></td></tr>
+      <tr><td><code>False</code></td><td><code>False</code></td><td><code>False</code></td></tr>
+    </tbody>
+  </table>
+ 
+  <p>Exemplo prático de uso:</p>
+  <pre><code>idade = 25
+tem_cnh = True
+salario_mensal = 3000
+
+# Exemplo com 'and'
+pode_alugar_carro = idade >= 21 and tem_cnh == True
+print("Pode alugar o carro?", pode_alugar_carro)
+
+# Exemplo com 'or'
+entrada_gratis = idade < 12 or idade > 65
+print("Tem entrada grátis?", entrada_gratis)
+
+# Exemplo com 'not'
+tem_dividas = False
+pode_receber_emprestimo = not tem_dividas
+print("Pode receber empréstimo?", pode_receber_emprestimo)</code></pre>
+ 
+  <div class="exercise-section">
+    <h3>Mão na Massa: Exercícios do Capítulo 3</h3>
+    <ol>
+      <li><strong>Calculadora Simples:</strong> Peça ao usuário dois números inteiros. Calcule e imprima a soma, subtração, multiplicação e divisão real dos dois.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 1
+num1 = int(input("Digite o primeiro número: "))
+num2 = int(input("Digite o segundo número: "))
+
+soma = num1 + num2
+subtracao = num1 - num2
+multiplicacao = num1 * num2
+divisao = num1 / num2
+
+print(f"{num1} + {num2} = {soma}")
+print(f"{num1} - {num2} = {subtracao}")
+print(f"{num1} * {num2} = {multiplicacao}")
+print(f"{num1} / {num2} = {divisao}")</code></pre>
+      </div>
+
+      <li><strong>Par ou Ímpar:</strong> Peça ao usuário um número inteiro. Use o operador de módulo (<code>%</code>) para descobrir se o número é par. A verificação <code>numero % 2 == 0</code> retorna <code>True</code> se for par. Imprima o resultado booleano.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 2
+numero = int(input("Digite um número inteiro: "))
+eh_par = numero % 2 == 0
+print(f"O número {numero} é par? {eh_par}")</code></pre>
+      </div>
+
+      <li><strong>Verificador de Maioridade:</strong> Peça a idade do usuário e armazene-a. Crie uma variável `eh_maior_de_idade` que armazena o resultado da comparação da idade com 18. Imprima esta variável.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 3
+idade = int(input("Qual a sua idade? "))
+eh_maior_de_idade = idade >= 18
+print(f"É maior de idade? {eh_maior_de_idade}")</code></pre>
+      </div>
+
+      <li><strong>Acesso ao Brinquedo:</strong> Para entrar em um brinquedo de parque de diversões, a pessoa precisa ter mais de 1.40m de altura E menos de 100kg. Peça ao usuário sua altura e peso. Armazene o resultado da verificação (se pode ou não entrar) em uma variável e imprima.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 4
+altura = float(input("Digite sua altura em metros: "))
+peso = float(input("Digite seu peso em kg: "))
+
+pode_entrar = altura > 1.40 and peso < 100
+print(f"Pode entrar no brinquedo? {pode_entrar}")</code></pre>
+      </div>
+
+      <li><strong>Desconto no Cinema:</strong> O cinema dá desconto para estudantes OU idosos (60 anos ou mais). Peça a idade do usuário e se ele é estudante (peça para digitar 'sim' ou 'nao'). Verifique se ele tem direito ao desconto e imprima o resultado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 5
+idade = int(input("Qual sua idade? "))
+resposta_estudante = input("Você é estudante? (sim/nao) ")
+
+eh_estudante = resposta_estudante == "sim"
+eh_idoso = idade >= 60
+
+tem_desconto = eh_estudante or eh_idoso
+print(f"Tem direito a desconto? {tem_desconto}")</code></pre>
+      </div>
+
+      <li><strong>Login Simples:</strong> Crie duas variáveis, `usuario_cadastrado` e `senha_cadastrada`. Peça para o usuário digitar seu usuário e senha. Compare os valores digitados com os cadastrados e imprima <code>True</code> se ambos forem iguais.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 6
+usuario_cadastrado = "admin"
+senha_cadastrada = "12345"
+
+usuario_digitado = input("Usuário: ")
+senha_digitada = input("Senha: ")
+
+login_sucesso = usuario_digitado == usuario_cadastrado and senha_digitada == senha_cadastrada
+print(f"Login bem-sucedido? {login_sucesso}")</code></pre>
+      </div>
+     
+      <li><strong>Porta Trancada:</strong> Crie uma variável booleana `porta_trancada` com valor `True`. Use o operador `not` para criar uma variável `porta_aberta`. Imprima o valor de `porta_aberta`.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 7
+porta_trancada = True
+porta_aberta = not porta_trancada
+print(f"A porta está aberta? {porta_aberta}")</code></pre>
+      </div>
+
+      <li><strong>Divisão e Resto:</strong> Peça ao usuário o número total de alunos em uma sala e quantos alunos cabem em cada grupo. Calcule e imprima quantos grupos completos podem ser formados e quantos alunos sobrarão.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 8
+total_alunos = int(input("Total de alunos na sala: "))
+alunos_por_grupo = int(input("Alunos por grupo: "))
+
+grupos_completos = total_alunos // alunos_por_grupo
+alunos_sobrando = total_alunos % alunos_por_grupo
+
+print(f"Podemos formar {grupos_completos} grupos completos.")
+print(f"Sobrarão {alunos_sobrando} alunos.")</code></pre>
+      </div>
+
+      <li><strong>Comparando Textos:</strong> Peça ao usuário para digitar duas palavras. Compare se as duas palavras são diferentes e imprima o resultado booleano.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 9
+palavra1 = input("Digite a primeira palavra: ")
+palavra2 = input("Digite a segunda palavra: ")
+
+sao_diferentes = palavra1 != palavra2
+print(f"As palavras são diferentes? {sao_diferentes}")</code></pre>
+      </div>
+
+      <li><strong>Aprovação em Disciplina:</strong> Para ser aprovado, um aluno precisa de nota maior ou igual a 7 E frequência maior ou igual a 75%. Peça a nota e a frequência do aluno. Verifique se ele foi aprovado e imprima o resultado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 10
+nota = float(input("Digite a nota do aluno (0 a 10): "))
+frequencia = int(input("Digite a frequência do aluno (0 a 100): "))
+
+aprovado = nota >= 7 and frequencia >= 75
+print(f"Aluno aprovado? {aprovado}")</code></pre>
+      </div>
+     
+      <li><strong>Quadrado de um Número:</strong> Peça um número ao usuário e use o operador de exponenciação para calcular o quadrado desse número (elevado a 2). Imprima o resultado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 11
+numero = float(input("Digite um número: "))
+quadrado = numero ** 2
+print(f"O quadrado de {numero} é {quadrado}.")</code></pre>
+      </div>
+
+      <li><strong>Dentro do Orçamento:</strong> Defina uma variável `orcamento` com valor 500. Peça o preço de um produto e a quantidade desejada. Calcule o custo total (preço * quantidade). Verifique se o custo total é menor ou igual ao orçamento e imprima o resultado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 12
+orcamento = 500.00
+
+preco_produto = float(input("Qual o preço do produto? "))
+quantidade = int(input("Qual a quantidade desejada? "))
+
+custo_total = preco_produto * quantidade
+dentro_do_orcamento = custo_total <= orcamento
+
+print(f"O custo total é R${custo_total}.")
+print(f"A compra está dentro do orçamento? {dentro_do_orcamento}")</code></pre>
+      </div>
+     
+      <li><strong>Dia de Folga:</strong> Uma pessoa está de folga se for sábado OU domingo. Peça ao usuário para digitar o dia da semana. Verifique se ele está de folga e imprima o resultado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 13
+dia_semana = input("Digite o dia da semana (ex: 'sabado'): ").lower() # .lower() converte para minúsculas
+
+eh_fim_de_semana = dia_semana == "sabado" or dia_semana == "domingo"
+print(f"Está de folga? {eh_fim_de_semana}")</code></pre>
+      </div>
+     
+      <li><strong>Número Mágico:</strong> Verifique se um número digitado pelo usuário é maior que 10 E menor que 20. Imprima o resultado booleano.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 14
+numero = int(input("Digite um número: "))
+
+eh_magico = numero > 10 and numero < 20
+print(f"O número está entre 10 e 20? {eh_magico}")</code></pre>
+      </div>
+
+      <li><strong>Negando uma Condição:</strong> Peça a idade de uma pessoa. Verifique se NÃO é verdade que a idade dela é menor que 18. Imprima o resultado. (Isso é o mesmo que verificar se ela é maior ou igual a 18, mas usando o `not`).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 15
+idade = int(input("Digite sua idade: "))
+
+nao_eh_menor = not (idade < 18)
+print(f"Não é verdade que a pessoa é menor de idade? {nao_eh_menor}")</code></pre>
+      </div>
+    </ol>
+  </div>
+
+    <h2>Capítulo 4: Tomando Decisões - Estruturas Condicionais</h2>
+  <p>Nossos programas, até agora, seguem um caminho reto. Executam uma linha após a outra, sem desvios. Mas a programação se torna realmente poderosa quando nossos programas podem tomar decisões e seguir caminhos diferentes com base nas condições que encontramos. É aqui que entram as <strong>estruturas condicionais</strong>.</p>
+
+  <h3>4.1. O Bloco <code>if</code>: Se uma condição for verdadeira...</h3>
+  <p>O <code>if</code> (que significa "se" em inglês) é a estrutura de decisão mais fundamental. Ele permite que um bloco de código seja executado <strong>apenas se</strong> uma determinada condição for verdadeira (ou seja, avaliar para <code>True</code>).</p>
+  <p>A sintaxe básica é:</p>
+  <pre><code>if condicao:
+  # Código a ser executado se a condição for True
+  # Este código está "dentro" do bloco if</code></pre>
+ 
+  <div class="important">
+    <p><strong>A Regra Mais Importante do Python: A INDENTAÇÃO</strong></p>
+    <p>Observe o espaço no início da linha de código abaixo do <code>if</code>. Isso é chamado de <strong>indentação</strong>. Em Python, a indentação não é opcional, não é apenas para deixar o código bonito. <strong>Ela é a forma como o Python sabe qual código pertence a qual bloco.</strong></p>
+    <p>Qualquer código que deva ser executado dentro do <code>if</code> precisa estar indentado. O padrão é usar <strong>4 espaços</strong>. A maioria dos editores de código faz isso automaticamente quando você pressiona a tecla Tab. Todo o código indentado no mesmo nível após um <code>if</code> pertence a ele. Quando a indentação volta ao nível anterior, o bloco <code>if</code> termina.</p>
+    <p><strong>Erro de indentação é um dos erros mais comuns para iniciantes. Preste atenção extrema a isso!</strong></p>
+  </div>
+
+  <p>Vamos a um exemplo prático:</p>
+  <pre><code>idade = int(input("Digite sua idade: "))
+
+# A condição aqui é 'idade >= 18'
+# Se o usuário digitar 20, a condição será True
+if idade >= 18:
+  print("Você é maior de idade.")
+  print("Já pode tirar a CNH.")
+
+print("Este print está fora do bloco if e sempre será executado.")
+</code></pre>
+  <p>Se você executar este código e digitar <code>20</code>, a saída será:</p>
+  <pre><code>Você é maior de idade.
+Já pode tirar a CNH.
+Este print está fora do bloco if e sempre será executado.</code></pre>
+  <p>Mas se você digitar <code>15</code>, a condição <code>15 >= 18</code> será <code>False</code>. O bloco de código indentado será completamente ignorado. A saída será:</p>
+  <pre><code>Este print está fora do bloco if e sempre será executado.</code></pre>
+
+  <h3>4.2. O Bloco <code>else</code>: ...senão, faça isso.</h3>
+  <p>O <code>if</code> nos dá um caminho para quando a condição é verdadeira. Mas e se quisermos executar um outro bloco de código quando a condição for <strong>falsa</strong>? Para isso, usamos o <code>else</code> (que significa "senão").</p>
+  <p>O <code>else</code> é sempre parceiro de um <code>if</code> e não tem uma condição própria. Ele simplesmente captura todos os casos em que a condição do <code>if</code> falhou.</p>
+  <p>A sintaxe é:</p>
+  <pre><code>if condicao:
+  # Código a ser executado se a condição for True
+else:
+  # Código a ser executado se a condição for False</code></pre>
+
+  <p>Vamos melhorar nosso exemplo da idade:</p>
+  <pre><code>idade = int(input("Digite sua idade: "))
+
+if idade >= 18:
+  print("Você é maior de idade.")
+else:
+  print("Você é menor de idade.")
+
+print("Fim do programa.")</code></pre>
+  <p>Agora, não importa o que o usuário digite, uma das duas mensagens será exibida. O programa tem dois caminhos possíveis.</p>
+
+  <h3>4.3. O Bloco <code>elif</code>: Verificando múltiplas condições em sequência.</h3>
+  <p>E se tivermos mais de duas possibilidades? Por exemplo, se quisermos classificar a nota de um aluno como "Reprovado", "Recuperação" ou "Aprovado". Poderíamos usar <code>if</code>s dentro de <code>else</code>s, mas isso ficaria confuso.</p>
+  <p>A solução elegante é o <code>elif</code> (uma contração de "else if"). Ele nos permite verificar uma nova condição se a condição do <code>if</code> anterior foi falsa.</p>
+  <p>Podemos criar uma cadeia de decisões:</p>
+  <pre><code>if primeira_condicao:
+  # Faça algo
+elif segunda_condicao:
+  # Faça outra coisa
+elif terceira_condicao:
+  # Faça mais uma coisa
+else:
+  # Se nenhuma das anteriores for verdadeira, faça isso
+</code></pre>
+  <div class="important">
+    <p><strong>Ordem da Cadeia <code>if-elif-else</code></strong></p>
+    <p>O Python verifica as condições em ordem. Assim que ele encontra uma condição <strong>verdadeira</strong>, ele executa o bloco correspondente e <strong>ignora todo o resto da cadeia</strong> (todos os <code>elif</code>s e o <code>else</code> seguintes). O bloco <code>else</code> no final é opcional e serve como um "pega-tudo" se nenhuma das condições for atendida.</p>
+  </div>
+
+  <p>Exemplo prático: Classificar a idade de uma pessoa.</p>
+  <pre><code>idade = int(input("Digite uma idade: "))
+
+if idade < 13:
+  print("É uma criança.")
+elif idade < 18: # Esta linha só é verificada se idade < 13 for Falso
+  print("É um adolescente.")
+elif idade < 60: # Esta linha só é verificada se as duas anteriores forem Falsas
+  print("É um adulto.")
+else:
+  print("É um idoso.")</code></pre>
+  <p>Se o usuário digitar <code>10</code>, a primeira condição (<code>10 < 13</code>) é <code>True</code>. O programa imprime "É uma criança." e pula todo o resto.</p>
+  <p>Se o usuário digitar <code>15</code>, a primeira condição (<code>15 < 13</code>) é <code>False</code>. O programa vai para a próxima: <code>15 < 18</code> é <code>True</code>. Ele imprime "É um adolescente." e pula o resto.</p>
+
+    <div class="exercise-section">
+    <h3>Mão na Massa: Exercícios do Capítulo 4</h3>
+    <ol>
+      <li><strong>Positivo ou Negativo:</strong> Peça um número ao usuário. Use uma estrutura <code>if-else</code> para imprimir se o número é "Positivo" ou "Não-positivo" (zero ou negativo).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 1
+numero = int(input("Digite um número: "))
+if numero > 0:
+  print("O número é Positivo.")
+else:
+  print("O número é Não-positivo.")</code></pre>
+      </div>
+
+      <li><strong>Aprovação do Aluno:</strong> Peça a nota de um aluno (de 0 a 10). Se a nota for maior ou igual a 7, imprima "Aprovado!". Caso contrário, imprima "Reprovado.".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 2
+nota = float(input("Digite a nota do aluno: "))
+if nota >= 7.0:
+  print("Aprovado!")
+else:
+  print("Reprovado.")</code></pre>
+      </div>
+
+      <li><strong>Login com Feedback:</strong> Peça um usuário e senha. Se o usuário for "admin" e a senha for "123", imprima "Acesso concedido". Caso contrário, imprima "Usuário ou senha incorretos".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 3
+usuario = input("Usuário: ")
+senha = input("Senha: ")
+
+if usuario == "admin" and senha == "123":
+  print("Acesso concedido.")
+else:
+  print("Usuário ou senha incorretos.")</code></pre>
+      </div>
+
+      <li><strong>Classificador de Números:</strong> Peça um número. Use <code>if-elif-else</code> para verificar se o número é "Positivo", "Negativo" ou "Zero".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 4
+numero = int(input("Digite um número: "))
+if numero > 0:
+  print("O número é Positivo.")
+elif numero < 0:
+  print("O número é Negativo.")
+else:
+  print("O número é Zero.")</code></pre>
+      </div>
+
+      <li><strong>Cardápio Simples:</strong> Peça ao usuário para escolher uma opção (1 para Pizza, 2 para Hambúrguer, 3 para Salada). Use <code>if-elif-else</code> para imprimir "Você escolheu Pizza.", "Você escolheu Hambúrguer.", "Você escolheu Salada." ou "Opção inválida."</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 5
+print("Cardápio: 1-Pizza, 2-Hambúrguer, 3-Salada")
+opcao = int(input("Escolha uma opção: "))
+
+if opcao == 1:
+  print("Você escolheu Pizza.")
+elif opcao == 2:
+  print("Você escolheu Hambúrguer.")
+elif opcao == 3:
+  print("Você escolheu Salada.")
+else:
+  print("Opção inválida.")</code></pre>
+      </div>
+     
+      <li><strong>Vogal ou Consoante:</strong> Peça ao usuário para digitar uma única letra. Use uma estrutura condicional para verificar e imprimir se a letra é "Vogal" ou "Consoante". (Considere apenas letras minúsculas).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 6
+letra = input("Digite uma letra minúscula: ")
+
+if letra == 'a' or letra == 'e' or letra == 'i' or letra == 'o' or letra == 'u':
+  print("É uma Vogal.")
+else:
+  print("É uma Consoante.")</code></pre>
+      </div>
+     
+      <li><strong>Calculadora de IMC:</strong> Peça o peso (kg) и a altura (m) do usuário. Calcule o IMC (peso / altura**2). Use <code>if-elif-else</code> para classificar: Abaixo de 18.5 (Abaixo do peso), entre 18.5 e 24.9 (Peso normal), entre 25 e 29.9 (Sobrepeso), 30 ou mais (Obesidade).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 7
+peso = float(input("Digite seu peso em kg: "))
+altura = float(input("Digite sua altura em metros: "))
+
+imc = peso / (altura ** 2)
+print(f"Seu IMC é: {imc:.2f}") # :.2f formata para 2 casas decimais
+
+if imc < 18.5:
+  print("Classificação: Abaixo do peso.")
+elif imc < 25:
+  print("Classificação: Peso normal.")
+elif imc < 30:
+  print("Classificação: Sobrepeso.")
+else:
+  print("Classificação: Obesidade.")</code></pre>
+      </div>
+     
+      <li><strong>Maior de Três Números:</strong> Peça ao usuário para digitar três números inteiros. Use condicionais para descobrir e imprimir qual deles é o maior.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 8
+num1 = int(input("Digite o primeiro número: "))
+num2 = int(input("Digite o segundo número: "))
+num3 = int(input("Digite o terceiro número: "))
+
+if num1 >= num2 and num1 >= num3:
+  print(f"O maior número é {num1}.")
+elif num2 >= num1 and num2 >= num3:
+  print(f"O maior número é {num2}.")
+else:
+  print(f"O maior número é {num3}.")</code></pre>
+      </div>
+     
+      <li><strong>Permissão para Votar:</strong> Peça a idade de uma pessoa. Se a idade for 16 ou 17, imprima "Voto opcional". Se for entre 18 e 70, imprima "Voto obrigatório". Se for menor que 16, imprima "Não pode votar". Para os demais casos (acima de 70), imprima "Voto opcional".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 9
+idade = int(input("Digite sua idade: "))
+
+if idade < 16:
+  print("Não pode votar.")
+elif idade < 18 or idade > 70:
+  print("Voto opcional.")
+else: # A única sobra é entre 18 e 70 (inclusive)
+  print("Voto obrigatório.")</code></pre>
+      </div>
+     
+      <li><strong>Caixa Eletrônico Simples:</strong> Defina uma variável `saldo` com valor 1000. Pergunte ao usuário quanto ele quer sacar. Se o valor do saque for menor ou igual ao saldo, subtraia o valor do saldo e imprima "Saque realizado! Novo saldo: [saldo]". Caso contrário, imprima "Saldo insuficiente.".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 10
+saldo = 1000.00
+saque = float(input(f"Seu saldo é R${saldo}. Quanto deseja sacar? "))
+
+if saque <= saldo:
+  saldo = saldo - saque # ou saldo -= saque
+  print(f"Saque realizado! Novo saldo: R${saldo}")
+else:
+  print("Saldo insuficiente.")</code></pre>
+      </div>
+
+      <li><strong>Verificador de Fim de Semana:</strong> Peça ao usuário para digitar um dia da semana. Se for "sábado" ou "domingo", imprima "É fim de semana!". Caso contrário, imprima "É um dia útil.".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 11
+dia = input("Digite um dia da semana: ").lower()
+
+if dia == "sábado" or dia == "domingo":
+  print("É fim de semana!")
+else:
+  print("É um dia útil.")</code></pre>
+      </div>
+
+      <li><strong>Triângulos:</strong> Peça ao usuário os comprimentos dos três lados de um triângulo. Verifique se eles podem formar um triângulo (a soma de quaisquer dois lados deve ser maior que o terceiro lado). Se puderem, use `if-elif-else` para classificar como "Equilátero" (todos os lados iguais), "Isósceles" (dois lados iguais) ou "Escaleno" (todos os lados diferentes). Se não puderem formar um triângulo, informe ao usuário.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 12
+l1 = float(input("Lado 1: "))
+l2 = float(input("Lado 2: "))
+l3 = float(input("Lado 3: "))
+
+# Verifica se pode formar um triângulo
+if (l1 + l2 > l3) and (l1 + l3 > l2) and (l2 + l3 > l1):
+  print("Pode formar um triângulo.")
+  # Classifica o triângulo
+  if l1 == l2 and l2 == l3:
+    print("Tipo: Equilátero.")
+  elif l1 == l2 or l1 == l3 or l2 == l3:
+    print("Tipo: Isósceles.")
+  else:
+    print("Tipo: Escaleno.")
+else:
+  print("Os lados informados não podem formar um triângulo.")</code></pre>
+      </div>
+
+      <li><strong>Desconto por Quantidade:</strong> Uma loja dá 10% de desconto se o valor total da compra for R$ 100,00 ou mais. Peça o preço do item e a quantidade. Calcule o total. Se o total for R$ 100,00 ou mais, aplique o desconto e mostre o valor final com desconto. Caso contrário, mostre apenas o valor total sem desconto.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 13
+preco = float(input("Preço unitário do item: R$"))
+qtd = int(input("Quantidade: "))
+
+total = preco * qtd
+
+if total >= 100.00:
+  desconto = total * 0.10
+  total_com_desconto = total - desconto
+  print(f"Total original: R${total:.2f}")
+  print(f"Desconto de 10%: R${desconto:.2f}")
+  print(f"Valor final a pagar: R${total_com_desconto:.2f}")
+else:
+  print(f"Valor final a pagar: R${total:.2f}")</code></pre>
+      </div>
+    </ol>
+  </div>
+
+    <h2>Capítulo 5: Repetindo Tarefas - Laços de Repetição (Loops)</h2>
+  <p>Imagine que você precisa imprimir os números de 1 a 100. Você poderia escrever <code>print(1)</code>, <code>print(2)</code>, ... até <code>print(100)</code>, mas isso seria terrivelmente repetitivo e ineficiente. A programação nos oferece uma solução poderosa para tarefas repetitivas: os <strong>laços de repetição</strong>, ou <strong>loops</strong>.</p>
+  <p>Existem dois tipos principais de loops em Python: o laço <code>for</code> e o laço <code>while</code>.</p>
+ 
+  <h3>5.1. O Laço <code>for</code>: Repetindo um número definido de vezes.</h3>
+  <p>O laço <code>for</code> é usado quando você sabe <strong>quantas vezes</strong> quer repetir uma ação. Ele percorre (ou "itera") os itens de uma sequência, executando o bloco de código uma vez para cada item.</p>
+  <div class="analogy">
+    <p><strong>Analogia: Distribuindo Cartas</strong></p>
+    <p>Imagine que você tem uma pilha de 5 cartas para distribuir para 5 jogadores. Você pega a primeira carta, entrega. Pega a segunda, entrega. E assim por diante, até que as cartas acabem. Você sabe desde o início que repetirá a ação de "entregar carta" 5 vezes. Isso é um laço <code>for</code>.</p>
+  </div>
+  <p>A "sequência" pode ser muitas coisas, mas para começar, nosso principal aliado será a função <code>range()</code>.</p>
+ 
+  <h4>A função <code>range()</code></h4>
+  <p>A função <code>range()</code> gera uma sequência de números. Ela é incrivelmente útil em laços <code>for</code>.</p>
+  <ul>
+    <li><code>range(fim)</code>: Gera números de 0 até <code>fim - 1</code>. Ex: <code>range(5)</code> gera 0, 1, 2, 3, 4.</li>
+    <li><code>range(inicio, fim)</code>: Gera números de <code>inicio</code> até <code>fim - 1</code>. Ex: <code>range(1, 6)</code> gera 1, 2, 3, 4, 5.</li>
+    <li><code>range(inicio, fim, passo)</code>: Gera números de <code>inicio</code> até <code>fim - 1</code>, pulando de <code>passo</code> em <code>passo</code>. Ex: <code>range(0, 11, 2)</code> gera 0, 2, 4, 6, 8, 10.</li>
+  </ul>
+
+  <p>Agora, vamos usar o <code>for</code> com o <code>range()</code>. A sintaxe é:</p>
+  <pre><code>for variavel_temporaria in sequencia:
+  # Bloco de código a ser repetido
+  # A indentação é obrigatória aqui também!
+</code></pre>
+  <p>Exemplo:</p>
+  <pre><code>print("Contando até 4:")
+# A variável 'numero' vai receber 0, depois 1, depois 2, etc.
+for numero in range(5):
+  print(numero)
+
+print("\nTabuada do 7:")
+for i in range(1, 11):
+  print(f"7 x {i} = {7 * i}")
+
+print("\nContagem regressiva de foguete:")
+for segundo in range(10, 0, -1):
+  print(segundo)
+print("Lançar!")</code></pre>
+  <p>Na primeira parte, a variável <code>numero</code> assume o valor de cada item da sequência gerada por <code>range(5)</code>, um de cada vez. O bloco <code>print(numero)</code> é executado 5 vezes.</p>
+
+  <h3>5.2. O Laço <code>while</code>: Repetindo enquanto uma condição for verdadeira.</h3>
+  <p>E se não soubermos de antemão quantas vezes precisamos repetir? E se a repetição depender de uma condição, como "continue pedindo a senha enquanto o usuário digitar a errada"? Para isso, usamos o laço <code>while</code> (enquanto).</p>
+  <p>O laço <code>while</code> executa um bloco de código repetidamente <strong>enquanto</strong> uma condição for <code>True</code>.</p>
+  <div class="analogy">
+    <p><strong>Analogia: Enchendo um Balde</strong></p>
+    <p>Você precisa encher um balde com água. Você não sabe quantos copos de água serão necessários. Sua instrução é: <strong>enquanto</strong> o balde não estiver cheio, continue colocando água. A repetição para quando a condição ("balde não está cheio") se torna falsa. Isso é um laço <code>while</code>.</p>
+  </div>
+
+  <div class="important">
+    <p><strong>CUIDADO: Loops Infinitos!</strong></p>
+    <p>Com o <code>while</code>, é crucial que algo <strong>dentro do loop</strong> possa, eventualmente, tornar a condição de parada <code>False</code>. Se isso não acontecer, o loop continuará para sempre, travando seu programa. Isso é chamado de <strong>loop infinito</strong>. Se seu programa parecer travado, você provavelmente criou um!</p>
+  </div>
+  <p>A sintaxe é:</p>
+  <pre><code>while condicao:
+  # Bloco de código a ser repetido
+  # Algo aqui dentro deve mudar a condição para False em algum momento
+</code></pre>
+  <p>Exemplo: um jogo de adivinhação simples.</p>
+  <pre><code>numero_secreto = 42
+chute = 0 # Inicializamos com um valor que não seja o secreto
+
+# O loop continua ENQUANTO o chute for diferente do número secreto
+while chute != numero_secreto:
+  chute = int(input("Adivinhe o número secreto: "))
+
+# Esta linha só será executada quando o loop terminar
+print("Parabéns! Você acertou!")</code></pre>
+  <p>Neste caso, a ação de pedir um novo <code>input</code> dentro do loop é o que dá ao usuário a chance de acertar e, assim, tornar a condição <code>chute != numero_secreto</code> falsa, terminando o loop.</p>
+
+  <h3>5.3. Controle de Laços: <code>break</code> e <code>continue</code>.</h3>
+  <p>Às vezes, precisamos de um controle mais fino sobre nossos loops. Python nos dá duas ferramentas para isso: <code>break</code> e <code>continue</code>.</p>
+ 
+  <h4><code>break</code> (parar/quebrar)</h4>
+  <p>A instrução <code>break</code> <strong>interrompe o loop imediatamente</strong>, não importa em que ponto da iteração ele esteja. O programa continua a execução na primeira linha após o fim do loop.</p>
+  <p>Exemplo: Procurando por um número em uma sequência.</p>
+  <pre><code># Procurando o primeiro número maior que 20 e divisível por 7
+for numero in range(1, 101):
+  print(f"Testando {numero}...")
+  if numero > 20 and numero % 7 == 0:
+    print(f"Encontrei! O número é {numero}.")
+    break # Sai do loop for imediatamente
+
+print("Fim da busca.")</code></pre>
+  <p>Sem o <code>break</code>, o loop continuaria testando todos os números até 100. Com o <code>break</code>, ele para assim que encontra o primeiro resultado (que é 21).</p>
+ 
+  <h4><code>continue</code> (continuar/prosseguir)</h4>
+  <p>A instrução <code>continue</code> <strong>pula o restante do código da iteração atual</strong> e vai direto para o início da próxima iteração do loop.</p>
+  <p>Exemplo: Imprimindo apenas os números ímpares.</p>
+  <pre><code>for numero in range(1, 11):
+  # Se o número for par...
+  if numero % 2 == 0:
+    continue # ...pule para a próxima iteração, ignorando o print abaixo
+ 
+  print(numero) # Este print só executa para números ímpares</code></pre>
+  <p>Quando <code>numero</code> é 2, a condição <code>numero % 2 == 0</code> é verdadeira, o <code>continue</code> é executado, e o programa volta para o topo do loop com <code>numero</code> valendo 3, sem nunca chegar ao <code>print(numero)</code>.</p>
+
+    <div class="exercise-section">
+    <h3>Mão na Massa: Exercícios do Capítulo 5</h3>
+    <ol>
+      <li><strong>Contagem de 1 a 10:</strong> Use um laço <code>for</code> e a função <code>range()</code> para imprimir os números de 1 a 10.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 1
+for i in range(1, 11):
+  print(i)</code></pre>
+      </div>
+
+      <li><strong>Contagem Regressiva:</strong> Use um laço <code>for</code> para fazer uma contagem regressiva de 10 a 1.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 2
+for i in range(10, 0, -1):
+  print(i)</code></pre>
+      </div>
+
+      <li><strong>Tabuada de um Número:</strong> Peça um número ao usuário e use um laço <code>for</code> para imprimir a tabuada desse número, de 1 a 10.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 3
+num = int(input("Digite um número para ver sua tabuada: "))
+for i in range(1, 11):
+  print(f"{num} x {i} = {num * i}")</code></pre>
+      </div>
+
+      <li><strong>Soma de 1 a 100:</strong> Use um laço <code>for</code> para calcular a soma de todos os números de 1 a 100. Crie uma variável `soma` antes do loop e vá adicionando cada número a ela. Imprima o resultado final.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 4
+soma = 0
+for i in range(1, 101):
+  soma = soma + i # ou soma += i
+print(f"A soma dos números de 1 a 100 é: {soma}")</code></pre>
+      </div>
+
+      <li><strong>Senha com `while`:</strong> Crie uma variável com uma senha. Use um laço <code>while</code> para continuar pedindo a senha ao usuário até que ele acerte.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 5
+senha_correta = "python123"
+senha_digitada = ""
+
+while senha_digitada != senha_correta:
+  senha_digitada = input("Digite a senha: ")
+  if senha_digitada != senha_correta:
+    print("Senha incorreta. Tente novamente.")
+
+print("Acesso permitido!")</code></pre>
+      </div>
+
+      <li><strong>Menu Interativo:</strong> Crie um menu com opções (1-Opção A, 2-Opção B, 0-Sair). Use um laço <code>while</code> para mostrar o menu repetidamente até que o usuário digite 0.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 6
+opcao = -1 # Inicializa com um valor que não seja 0
+
+while opcao != 0:
+  print("\n--- MENU ---")
+  print("1 - Opção A")
+  print("2 - Opção B")
+  print("0 - Sair")
+  opcao = int(input("Escolha uma opção: "))
+ 
+  if opcao == 1:
+    print("Você escolheu a Opção A.")
+  elif opcao == 2:
+    print("Você escolheu a Opção B.")
+
+print("Programa encerrado.")</code></pre>
+      </div>
+
+      <li><strong>Saindo com `break`:</strong> Crie um laço <code>while True</code> (um loop infinito). Dentro dele, peça um número ao usuário. Se o número for 10, use `break` para sair do loop.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 7
+while True:
+  numero = int(input("Digite um número (digite 10 para sair): "))
+  if numero == 10:
+    break
+  print(f"Você digitou {numero}.")
+
+print("Você saiu do loop!")</code></pre>
+      </div>
+     
+      <li><strong>Pulando os Pares com `continue`:</strong> Use um laço <code>for</code> para percorrer os números de 1 a 20. Use a instrução <code>continue</code> para pular a impressão dos números pares.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 8
+for i in range(1, 21):
+  if i % 2 == 0:
+    continue
+  print(i)</code></pre>
+      </div>
+
+      <li><strong>Contador de Vogais:</strong> Peça ao usuário uma palavra. Use um laço <code>for</code> para percorrer cada letra da palavra. Conte quantas vogais existem e imprima o total.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 9
+palavra = input("Digite uma palavra: ").lower()
+contador_vogais = 0
+vogais = "aeiou"
+
+for letra in palavra:
+  if letra in vogais:
+    contador_vogais += 1
+
+print(f"A palavra '{palavra}' tem {contador_vogais} vogais.")</code></pre>
+      </div>
+
+      <li><strong>Fatorial de um Número:</strong> Peça um número inteiro positivo ao usuário. Calcule o seu fatorial. Ex: 5! = 5 * 4 * 3 * 2 * 1. Use um laço <code>for</code>.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 10
+num = int(input("Digite um número inteiro positivo: "))
+fatorial = 1
+
+if num < 0:
+  print("Não existe fatorial de número negativo.")
+elif num == 0:
+  print("O fatorial de 0 é 1.")
+else:
+  for i in range(1, num + 1):
+    fatorial = fatorial * i
+  print(f"O fatorial de {num} é {fatorial}.")</code></pre>
+      </div>
+
+      <li><strong>Validação de Input:</strong> Peça ao usuário para digitar uma nota entre 0 e 10. Use um laço <code>while</code> para garantir que o número digitado esteja nesse intervalo, pedindo novamente caso não esteja.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 11
+nota = -1 # Inicializa com valor inválido para entrar no loop
+
+while nota < 0 or nota > 10:
+  nota = float(input("Digite uma nota entre 0 e 10: "))
+  if nota < 0 or nota > 10:
+    print("Valor inválido. Tente novamente.")
+
+print(f"A nota digitada foi {nota}.")</code></pre>
+      </div>
+
+      <li><strong>Apenas Palavras Curtas:</strong> Peça ao usuário para digitar 5 palavras, uma de cada vez. Imprima apenas as palavras que tiverem 4 ou menos letras.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 12
+print("Digite 5 palavras.")
+for i in range(5):
+  palavra = input(f"Palavra {i+1}: ")
+  if len(palavra) <= 4:
+    print(f"Palavra curta: {palavra}")</code></pre>
+      </div>
+
+      <li><strong>Sequência de Fibonacci (Desafio):</strong> A sequência de Fibonacci começa com 0 e 1, e cada número subsequente é a soma dos dois anteriores (0, 1, 1, 2, 3, 5, 8...). Peça ao usuário quantos termos da sequência ele quer ver e imprima-os.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 13
+termos = int(input("Quantos termos de Fibonacci você quer ver? "))
+a, b = 0, 1 # Atribuição múltipla
+
+if termos <= 0:
+  print("Por favor, digite um número positivo.")
+elif termos == 1:
+  print(a)
+else:
+  for i in range(termos):
+    print(a, end=" ") # end=" " imprime na mesma linha
+    # Atualiza os valores para o próximo termo
+    soma = a + b
+    a = b
+    b = soma</code></pre>
+      </div>
+    </ol>
+  </div>
+
+    <h2>Capítulo 6: Coleções de Dados I - Listas</h2>
+  <p>Até agora, cada variável que criamos guardava apenas um único valor (um nome, uma idade, um preço). Mas e se quisermos guardar uma coleção de valores? Por exemplo, uma lista de nomes de alunos, uma lista de compras, ou as temperaturas registradas em uma semana.</p>
+  <p>Para isso, Python nos oferece estruturas de dados. A primeira e mais comum que vamos aprender é a <strong>lista</strong>.</p>
+ 
+  <h3>6.1. O que são Listas? Sua primeira estrutura de dados.</h3>
+  <p>Uma lista em Python é uma coleção de itens. Simples assim.</p>
+  <div class="analogy">
+    <p><strong>Analogia: Prateleira Numerada / Lista de Compras</strong></p>
+    <p>Pense em uma lista como uma prateleira com várias divisões, cada uma numerada. Você pode colocar um objeto em cada divisão. Ou pense nela como uma lista de compras no papel: você tem uma sequência de itens, um após o outro.</p>
+  </div>
+  <p>As duas características mais importantes de uma lista são:</p>
+  <ul>
+    <li><strong>Ordenada:</strong> Os itens mantêm uma ordem específica. O primeiro item que você adiciona será sempre o primeiro, o segundo será o segundo, e assim por diante.</li>
+    <li><strong>Mutável:</strong> Você pode alterar uma lista depois de criá-la. É possível adicionar novos itens, remover itens existentes ou mudar o valor de um item.</li>
+  </ul>
+
+  <h3>6.2. Criando e Acessando Listas:</h3>
+  <p>Criamos uma lista usando colchetes <code>[]</code> e separando os itens por vírgulas.</p>
+  <pre><code># Uma lista de números
+numeros = [2, 4, 6, 8, 10]
+
+# Uma lista de strings
+frutas = ["maçã", "banana", "laranja"]
+
+# Uma lista mista (não é tão comum, mas é possível)
+misturada = ["texto", 10, 3.14, True]
+
+# Uma lista vazia
+compras = []</code></pre>
+
+  <h4>Acessando por Índice</h4>
+  <p>Para pegar um item específico de uma lista, usamos seu <strong>índice</strong>. O índice é a posição do item na lista.</p>
+  <div class="important">
+    <p><strong>A Contagem Começa do Zero!</strong></p>
+    <p>Na programação, a contagem de índices quase sempre começa em <strong>ZERO</strong>. Isso significa que o primeiro item está no índice 0, o segundo no índice 1, e assim por diante. Esquecer isso é um erro clássico de iniciantes.</p>
+  </div>
+  <p>A sintaxe para acessar um item é <code>nome_da_lista[indice]</code>.</p>
+  <pre><code>frutas = ["maçã", "banana", "laranja", "uva"]
+
+# Pega o primeiro item (índice 0)
+primeira_fruta = frutas[0]
+print(primeira_fruta) # Saída: maçã
+
+# Pega o terceiro item (índice 2)
+terceira_fruta = frutas[2]
+print(terceira_fruta) # Saída: laranja</code></pre>
+
+  <h4>Índices Negativos</h4>
+  <p>Python tem um atalho muito útil: você pode usar índices negativos para começar a contar do <strong>final</strong> da lista. O índice <code>-1</code> se refere ao último item, <code>-2</code> ao penúltimo, e assim por diante.</p>
+  <pre><code>frutas = ["maçã", "banana", "laranja", "uva"]
+
+# Pega o último item
+ultima_fruta = frutas[-1]
+print(ultima_fruta) # Saída: uva
+
+# Pega o penúltimo item
+penultima_fruta = frutas[-2]
+print(penultima_fruta) # Saída: laranja</code></pre>
+
+  <h3>6.3. Fatiamento (Slicing): Pegando pedaços da lista.</h3>
+  <p>E se quisermos pegar mais de um item de uma vez? Um "pedaço" da lista? Para isso, usamos o fatiamento (slicing). A sintaxe é <code>lista[inicio:fim]</code>. Isso pega todos os itens a partir do índice <code>inicio</code> até o índice <code>fim - 1</code> (o <code>fim</code> não é incluído).</p>
+  <pre><code>numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Pega os itens do índice 2 até o 4 (5-1)
+sub_lista1 = numeros[2:5]
+print(sub_lista1) # Saída: [2, 3, 4]
+
+# Se omitir o início, começa do índice 0
+primeiros_tres = numeros[:3]
+print(primeiros_tres) # Saída: [0, 1, 2]
+
+# Se omitir o fim, vai até o final da lista
+a_partir_do_seis = numeros[6:]
+print(a_partir_do_seis) # Saída: [6, 7, 8, 9]
+
+# Copiando a lista inteira
+copia_total = numeros[:]
+print(copia_total)</code></pre>
+  <p>Existe também um terceiro parâmetro, o <code>passo</code>: <code>lista[inicio:fim:passo]</code>. Ele permite pular itens.</p>
+  <pre><code>numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# Pega todos os números, pulando de 2 em 2 (os pares)
+pares = numeros[::2]
+print(pares) # Saída: [0, 2, 4, 6, 8]
+</code></pre>
+
+  <h3>6.4. Modificando Listas:</h3>
+  <p>Como listas são mutáveis, podemos alterá-las. Podemos mudar um item, adicionar novos ou remover existentes.</p>
+  <pre><code>cores = ["vermelho", "verde", "azul"]
+
+# Alterando um item existente
+cores[1] = "amarelo" # Substitui "verde" por "amarelo"
+print(cores) # Saída: ['vermelho', 'amarelo', 'azul']
+
+# Adicionando um item NO FINAL da lista com .append()
+cores.append("roxo")
+print(cores) # Saída: ['vermelho', 'amarelo', 'azul', 'roxo']
+
+# Adicionando um item em uma POSIÇÃO ESPECÍFICA com .insert()
+cores.insert(1, "laranja") # Insere "laranja" no índice 1
+print(cores) # Saída: ['vermelho', 'laranja', 'amarelo', 'azul', 'roxo']
+
+# Removendo um item PELO VALOR com .remove()
+cores.remove("amarelo")
+print(cores) # Saída: ['vermelho', 'laranja', 'azul', 'roxo']
+
+# Removendo um item PELO ÍNDICE com .pop()
+# .pop() também retorna o item que foi removido
+cor_removida = cores.pop(2)
+print(cores) # Saída: ['vermelho', 'laranja', 'roxo']
+print("Cor removida:", cor_removida) # Saída: Cor removida: azul
+
+# Se usar .pop() sem índice, remove o ÚLTIMO item
+cores.pop()
+print(cores) # Saída: ['vermelho', 'laranja']
+</code></pre>
+ 
+  <h3>6.5. Funções e Métodos Úteis para Listas:</h3>
+  <p>Existem muitas operações úteis que podemos fazer com listas.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Função/Método</th>
+        <th>Exemplo de Uso</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>len()</code></td>
+        <td><code>len(minha_lista)</code></td>
+        <td>Retorna o número de itens na lista (o "comprimento").</td>
+      </tr>
+      <tr>
+        <td><code>.sort()</code></td>
+        <td><code>minha_lista.sort()</code></td>
+        <td>Ordena a própria lista. Para números, do menor para o maior. Para strings, em ordem alfabética.</td>
+      </tr>
+      <tr>
+        <td><code>.reverse()</code></td>
+        <td><code>minha_lista.reverse()</code></td>
+        <td>Inverte a ordem dos itens na própria lista.</td>
+      </tr>
+      <tr>
+        <td><code>in</code></td>
+        <td><code>item in minha_lista</code></td>
+        <td>Operador que verifica se um item existe na lista. Retorna <code>True</code> ou <code>False</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <pre><code>numeros = [5, 1, 9, 3, 7]
+print("Tamanho da lista:", len(numeros)) # Saída: 5
+
+# Verificando se um item existe
+if 9 in numeros:
+  print("O número 9 está na lista!")
+
+# Ordenando a lista
+numeros.sort()
+print("Lista ordenada:", numeros) # Saída: [1, 3, 5, 7, 9]
+
+# Invertendo a lista
+numeros.reverse()
+print("Lista invertida:", numeros) # Saída: [9, 7, 5, 3, 1]</code></pre>
+
+    <div class="exercise-section">
+    <h3>Mão na Massa: Exercícios do Capítulo 6</h3>
+    <ol>
+      <li><strong>Sua Lista de Hobbies:</strong> Crie uma lista contendo 3 a 5 dos seus hobbies favoritos como strings. Imprima a lista inteira.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 1
+hobbies = ["ler", "caminhar", "jogar videogame", "cozinhar"]
+print(hobbies)</code></pre>
+      </div>
+     
+      <li><strong>Acessando Itens:</strong> Da lista de hobbies que você criou, imprima o primeiro hobby e o último hobby.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 2
+hobbies = ["ler", "caminhar", "jogar videogame", "cozinhar"]
+print("Primeiro hobby:", hobbies[0])
+print("Último hobby:", hobbies[-1])</code></pre>
+      </div>
+     
+      <li><strong>Modificando um Hobby:</strong> Na sua lista de hobbies, troque o segundo hobby (índice 1) por "programar". Imprima a lista modificada.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 3
+hobbies = ["ler", "caminhar", "jogar videogame"]
+hobbies[1] = "programar"
+print(hobbies)</code></pre>
+      </div>
+     
+      <li><strong>Adicionando Hobbies:</strong> Comece com uma lista vazia de hobbies. Use <code>.append()</code> três vezes para adicionar três hobbies à lista. Imprima a lista final.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 4
+hobbies = []
+hobbies.append("assistir séries")
+hobbies.append("ouvir música")
+hobbies.append("viajar")
+print(hobbies)</code></pre>
+      </div>
+     
+      <li><strong>Removendo Itens:</strong> Crie uma lista de compras. Use <code>.pop()</code> para remover o último item e <code>.remove()</code> para remover um item específico pelo nome. Imprima a lista em cada etapa.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 5
+compras = ["leite", "pão", "ovos", "maçã"]
+print("Lista original:", compras)
+
+compras.pop() # Remove "maçã"
+print("Depois do pop():", compras)
+
+compras.remove("pão")
+print("Depois do remove('pão'):", compras)</code></pre>
+      </div>
+     
+      <li><strong>Fatiando Nomes:</strong> Crie uma lista com 5 nomes. Use fatiamento para criar uma nova lista contendo apenas os nomes do meio (o segundo, terceiro e quarto).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 6
+nomes = ["Ana", "Bruno", "Carla", "Daniel", "Eva"]
+nomes_do_meio = nomes[1:4]
+print(nomes_do_meio)</code></pre>
+      </div>
+
+      <li><strong>Tamanho da Lista:</strong> Crie uma lista de números e use a função <code>len()</code> para imprimir quantos itens ela tem.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 7
+numeros = [10, 20, 30, 40, 50, 60]
+print(f"A lista tem {len(numeros)} itens.")</code></pre>
+      </div>
+
+      <li><strong>Verificador de Convidado:</strong> Crie uma lista de convidados para uma festa. Peça ao usuário para digitar seu nome. Use o operador <code>in</code> dentro de um <code>if</code> para verificar se o nome está na lista e imprima uma mensagem apropriada.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 8
+convidados = ["Maria", "João", "Pedro", "Luísa"]
+nome = input("Digite seu nome: ")
+
+if nome in convidados:
+  print(f"Bem-vindo(a) à festa, {nome}!")
+else:
+  print("Desculpe, seu nome não está na lista.")</code></pre>
+      </div>
+
+      <li><strong>Lista em Ordem Alfabética:</strong> Crie uma lista de cidades. Use o método <code>.sort()</code> para ordená-la em ordem alfabética e imprima o resultado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 9
+cidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Salvador", "Curitiba"]
+cidades.sort()
+print(cidades)</code></pre>
+      </div>
+
+      <li><strong>Notas de Alunos:</strong> Peça ao usuário para digitar 5 notas (uma de cada vez, usando um loop <code>for</code>) e armazene-as em uma lista. Depois do loop, calcule a média das notas (soma de todas as notas / quantidade de notas).</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 10
+notas = []
+soma = 0
+
+for i in range(5):
+  nota = float(input(f"Digite a nota {i+1}: "))
+  notas.append(nota)
+  soma += nota
+
+media = soma / len(notas)
+print(f"As notas foram: {notas}")
+print(f"A média é: {media}")</code></pre>
+      </div>
+
+      <li><strong>Lista Invertida:</strong> Crie uma lista de números de 1 a 5. Use o método `.reverse()` e imprima a lista para ver o resultado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 11
+numeros = [1, 2, 3, 4, 5]
+numeros.reverse()
+print(numeros)</code></pre>
+      </div>
+
+      <li><strong>Juntando Listas:</strong> Crie duas listas de números. Crie uma terceira lista que seja a junção das duas primeiras usando o operador <code>+</code>. Imprima a nova lista.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 12
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+lista_completa = lista1 + lista2
+print(lista_completa)</code></pre>
+      </div>
+
+      <li><strong>Números Pares:</strong> Crie uma lista vazia chamada `pares`. Use um loop `for` com `range()` para percorrer os números de 1 a 30. Se o número for par, adicione-o à lista `pares`. No final, imprima a lista.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 13
+pares = []
+for numero in range(1, 31):
+  if numero % 2 == 0:
+    pares.append(numero)
+print(pares)</code></pre>
+      </div>
+    </ol>
+  </div>
+ 
+    <h2>Capítulo 7: Coleções de Dados II - Dicionários</h2>
+    <p>Aprendemos sobre as listas, que são como prateleiras numeradas. Agora, vamos conhecer outra estrutura de dados extremamente poderosa: os <strong>dicionários</strong>. Eles nos permitem armazenar informações de uma forma mais descritiva.</p>
+    
+    <h3>7.1. O que são Dicionários?</h3>
+    <p>Enquanto uma lista organiza os itens por sua posição (índice), um dicionário os organiza através de um sistema de <strong>chave-valor</strong>.</p>
+    <div class="analogy">
+        <p><strong>Analogia: Dicionário de Palavras / Agenda de Contatos</strong></p>
+        <p>Pense em um dicionário de português. Você não procura uma palavra pela sua posição (a 1500ª palavra do livro). Você procura pela própria palavra (a "chave") para encontrar sua definição (o "valor").</p>
+        <p>Uma agenda de contatos funciona da mesma forma. O nome de uma pessoa é a <strong>chave</strong>, e o número de telefone dela é o <strong>valor</strong>. A chave é o que usamos para encontrar a informação que queremos.</p>
+    </div>
+    <p>As características principais de um dicionário são:</p>
+    <ul>
+        <li><strong>Estrutura de Chave-Valor:</strong> Cada item em um dicionário é um par, consistindo de uma chave única e seu valor correspondente.</li>
+        <li><strong>Mutável:</strong> Assim como as listas, você pode adicionar, remover e modificar os pares chave-valor de um dicionário depois de criá-lo.</li>
+        <li><strong>Não Ordenado (em versões antigas):</strong> Em versões mais antigas de Python (abaixo de 3.7), os dicionários não garantiam a ordem de inserção dos itens. Nas versões modernas, a ordem é mantida, mas a principal forma de acesso continua sendo pela chave, não pelo índice.</li>
+    </ul>
+
+    <h3>7.2. Criando e Acessando Dicionários:</h3>
+    <p>Criamos um dicionário usando chaves <code>{}</code>. Dentro delas, cada par é escrito como <code>chave: valor</code>, e os pares são separados por vírgulas.</p>
+    <p>As chaves geralmente são strings, mas podem ser outros tipos de dados imutáveis (como números). Os valores podem ser de qualquer tipo (string, int, float, bool, e até mesmo outra lista ou outro dicionário).</p>
+    <pre><code># Criando um dicionário para representar um aluno
+aluno = {
+    "nome": "Carlos",
+    "idade": 22,
+    "curso": "Engenharia",
+    "matricula_ativa": True
+}
+
+# Dicionário vazio
+contato = {}
+</code></pre>
+
+    <h4>Acessando um valor através de sua chave</h4>
+    <p>Para obter um valor, você não usa um índice numérico como nas listas. Você usa a chave correspondente, dentro de colchetes <code>[]</code>.</p>
+    <pre><code>aluno = {
+    "nome": "Carlos",
+    "idade": 22,
+    "curso": "Engenharia"
+}
+
+# Acessando o nome do aluno
+print(aluno["nome"]) # Saída: Carlos
+
+# Acessando o curso
+print(aluno["curso"]) # Saída: Engenharia
+
+# Tentar acessar uma chave que não existe resultará em um erro!
+# print(aluno["sobrenome"]) # Isso daria um KeyError
+</code></pre>
+
+    <h3>7.3. Modificando Dicionários:</h3>
+    <p>Como dicionários são mutáveis, é fácil adicionar, atualizar ou remover informações.</p>
+
+    <h4>Adicionando e Atualizando Pares</h4>
+    <p>Para adicionar um novo par chave-valor, basta atribuir um valor a uma nova chave. Se a chave já existir, essa mesma sintaxe irá <strong>atualizar</strong> o valor existente.</p>
+    <pre><code># Começando com o dicionário do aluno
+aluno = {
+    "nome": "Carlos",
+    "idade": 22
+}
+
+# Adicionando uma nova informação (chave "curso")
+aluno["curso"] = "Ciência da Computação"
+print(aluno) # Saída: {'nome': 'Carlos', 'idade': 22, 'curso': 'Ciência da Computação'}
+
+# Atualizando uma informação existente (a idade)
+aluno["idade"] = 23
+print(aluno) # Saída: {'nome': 'Carlos', 'idade': 23, 'curso': 'Ciência da Computação'}
+</code></pre>
+
+    <h4>Removendo Pares</h4>
+    <p>Existem duas maneiras comuns de remover um par chave-valor:</p>
+    <ul>
+        <li><code>del</code>: Remove o par permanentemente.</li>
+        <li><code>.pop()</code>: Remove o par e <strong>retorna</strong> o valor removido, o que pode ser útil.</li>
+    </ul>
+    <pre><code>produto = {
+    "item": "Café",
+    "preco": 15.50,
+    "estoque": 100,
+    "id": 903
+}
+
+# Removendo o estoque com 'del'
+del produto["estoque"]
+print(produto) # Saída: {'item': 'Café', 'preco': 15.50, 'id': 903}
+
+# Removendo o id com '.pop()' e guardando o valor
+id_removido = produto.pop("id")
+print(produto) # Saída: {'item': 'Café', 'preco': 15.50}
+print("O ID removido foi:", id_removido) # Saída: O ID removido foi: 903
+</code></pre>
+
+    <h3>7.4. Iterando em Dicionários:</h3>
+    <p>Usar um laço <code>for</code> em um dicionário é um pouco diferente de em uma lista. Por padrão, um laço <code>for</code> em um dicionário percorre suas <strong>chaves</strong>. Mas temos métodos para percorrer os valores ou ambos.</p>
+    <pre><code>filme = {
+    "titulo": "A Origem",
+    "ano": 2010,
+    "diretor": "Christopher Nolan"
+}
+
+# 1. Iterando sobre as chaves (comportamento padrão)
+print("--- Chaves ---")
+for chave in filme:
+    print(chave)
+
+# 2. Iterando sobre os valores com .values()
+print("\n--- Valores ---")
+for valor in filme.values():
+    print(valor)
+
+# 3. Iterando sobre ambos (chave e valor) com .items()
+# O método .items() retorna tuplas de (chave, valor)
+print("\n--- Chave e Valor ---")
+for chave, valor in filme.items():
+    print(f"{chave}: {valor}")
+</code></pre>
+    <p>A saída do código acima seria:</p>
+    <pre><code>--- Chaves ---
+titulo
+ano
+diretor
+
+--- Valores ---
+A Origem
+2010
+Christopher Nolan
+
+--- Chave e Valor ---
+titulo: A Origem
+ano: 2010
+diretor: Christopher Nolan</code></pre>
+
+      <div class="exercise-section">
+    <h3>Mão na Massa: Exercícios do Capítulo 7</h3>
+    <ol>
+      <li><strong>Meu Dicionário Pessoal:</strong> Crie um dicionário chamado <code>eu</code> que armazene suas informações: "nome", "idade" e "cidade". Imprima o dicionário.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 1
+eu = {
+    "nome": "Seu Nome",
+    "idade": 30,
+    "cidade": "Sua Cidade"
+}
+print(eu)</code></pre>
+      </div>
+
+      <li><strong>Acessando Informações:</strong> A partir do dicionário que você criou no exercício 1, imprima a frase: "Olá, meu nome é [nome] e eu moro em [cidade].".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 2
+eu = {
+    "nome": "Seu Nome",
+    "idade": 30,
+    "cidade": "Sua Cidade"
+}
+print(f"Olá, meu nome é {eu['nome']} e eu moro em {eu['cidade']}.")</code></pre>
+      </div>
+
+      <li><strong>Adicionando Profissão:</strong> Adicione uma nova chave "profissao" ao seu dicionário pessoal com o valor que desejar. Imprima o dicionário atualizado.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 3
+eu = {
+    "nome": "Seu Nome",
+    "idade": 30,
+    "cidade": "Sua Cidade"
+}
+eu["profissao"] = "Programador(a) Python"
+print(eu)</code></pre>
+      </div>
+
+      <li><strong>Estoque de Produtos:</strong> Crie um dicionário para representar o estoque de uma loja. As chaves devem ser nomes de produtos (ex: "camiseta", "calça") e os valores, a quantidade em estoque. Imprima o estoque de um dos produtos.</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 4
+estoque = {
+    "camiseta": 50,
+    "calça": 35,
+    "tênis": 20
+}
+print(f"Quantidade de calças em estoque: {estoque['calça']}")</code></pre>
+      </div>
+
+      <li><strong>Listando o Cardápio:</strong> Crie um dicionário de cardápio onde as chaves são pratos e os valores são os preços. Use um loop `for` com `.items()` para imprimir o cardápio no formato "Prato: R$ Preço".</li>
+      <div class="toggle-solution">Mostrar/Ocultar Solução</div>
+      <div class="solution">
+        <pre><code># Solução do Exercício 5
+cardapio = {
+    "Pizza Margherita": 45.00,
+    "Hambúrguer Clássico": 30.50,
+    "Salada Caesar": 25.00
+}
+print("--- Cardápio do Restaurante ---")
+for prato, preco in cardapio.items():
+    print(f"{prato}: R$ {preco:.2f}")</code></pre>
+      </div>
+    </ol>
+  </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggles = document.querySelectorAll('.toggle-solution');
+            toggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function () {
+                    const solution = this.nextElementSibling;
+                    if (solution && solution.classList.contains('solution')) {
+                        if (solution.style.display === 'block') {
+                            solution.style.display = 'none';
+                        } else {
+                            solution.style.display = 'block';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
